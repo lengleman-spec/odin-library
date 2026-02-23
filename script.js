@@ -47,6 +47,13 @@ newBookBtn.addEventListener("click", function () {
   bookForm.style.display = "block";
 });
 
+bookForm.addEventListener("submit", function (event) {
+  // Prevent submit input from trying to send it to the server (default)
+  event.preventDefault();
+
+  const title = document.getElementById("title").value;
+});
+
 addBookToLibrary("The Hobbit", "Tolkien", 295, "Not Read");
 addBookToLibrary("Dungeon Crawler Carl", "Somebody", 450, "Read");
 
