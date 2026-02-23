@@ -13,6 +13,14 @@ function Book(title, author, pages, read) {
   };
 }
 
+Book.prototype.toggleRead = function () {
+  if (this.read === "Read") {
+    this.read = "Not Read";
+  } else {
+    this.read = "Read";
+  }
+};
+
 function addBookToLibrary(title, author, pages, read) {
   let book = new Book(title, author, pages, read);
 
@@ -36,7 +44,7 @@ function displayBooksOnPage() {
   <p>Pages:${book.pages}</p>
   <p>Status:${book.read}</p>
   <button class="toggle-btn" data-id="${book.id}">Toggle Read</button>
-  <button class="remove-btn data-id="${book.id}">Remove</button>`;
+  <button class="remove-btn" data-id="${book.id}">Remove</button>`;
 
     books.appendChild(card);
   });
@@ -56,40 +64,32 @@ bookForm.addEventListener("submit", function (event) {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
-  const read = document.getElementById("read").value.checked
-    ? "Read"
-    : "Not Read";
+  const read = document.getElementById("read").checked ? "Read" : "Not Read";
 
   addBookToLibrary(title, author, pages, read);
   displayBooksOnPage();
 
   bookForm.reset();
-  bookForm.style.display = none;
+  bookForm.style.display = "none";
 });
 
 document.querySelector(".books").addEventListener("click", function (event) {
   const id = event.target.dataset.id;
-  if (event.target.classList.contains("remove-btn")) {
-    const id = event.target.filter(function (book) {
-      return book.id !== id;
-    });
 
-    if (event.target.classList.contains("remove-btn")) {
-      myLibrary = myLibrary.filter((book) => book.id !== id);
-      displayBooksOnPage();
-    }
+  if (event.target.classList.contains("remove-btn")) {
+    myLibrary = myLibrary.filter((book) => book.id !== id);
+    displayBooksOnPage();
+  }
+
+  if (event.target.classList.contains("toggle-btn")) {
+    const book = myLibrary.find((book) => book.id === id);
+    book.toggleRead();
+    displayBooksOnPage();
   }
 });
 
-Book.prototype.toggleRead = function () {
-  if (this.read === "Read") {
-    this.read = "Not Read";
-  } else {
-    this.read = "Read";
-  }
-};
-
 addBookToLibrary("The Hobbit", "Tolkien", 295, "Not Read");
+addBookToLibrary("Dungeon Crawler Carl", "Somebody", 450, "Read");
 addBookToLibrary("Dungeon Crawler Carl", "Somebody", 450, "Read");
 
 displayBooksOnPage();
