@@ -40,6 +40,13 @@ function displayBooksOnPage() {
   });
 }
 
+const newBookBtn = document.getElementById("newBookBtn");
+const bookForm = document.getElementById("bookForm");
+
+newBookBtn.addEventListener("click", function () {
+  bookForm.style.display = "block";
+});
+
 addBookToLibrary("The Hobbit", "Tolkien", 295, "Not Read");
 addBookToLibrary("Dungeon Crawler Carl", "Somebody", 450, "Read");
 
