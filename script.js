@@ -24,16 +24,22 @@ function addBookToLibrary(title, author, pages, read) {
 function displayBooksOnPage() {
   const books = document.querySelector(".books");
   // Clear previous books so they don't duplicate:
-  booksContainer.innerHTML = "";
+  books.innerHTML = "";
   // Loop over library array to display cards
   myLibrary.forEach(function (book) {
     // Creates a new empty card
     const card = document.createElement("div");
     card.classList.add("book-card");
-  });
 
-  card.innerHTML = <h3>${book.title}</h3>;
-  <p>Author:${book.author}</p>;
-  <p>Pages:${book.pages}</p>;
-  <p>Status:${book.read}</p>;
+    card.innerHTML = `<h3>${book.title}</h3>
+  <p>Author:${book.author}</p>
+  <p>Pages:${book.pages}</p>
+  <p>Status:${book.read}</p>`;
+
+    books.appendChild(card);
+  });
 }
+
+addBookToLibrary("The Hobbit", "Tolkien", 295, "Read");
+
+displayBooksOnPage();
