@@ -35,6 +35,7 @@ function displayBooksOnPage() {
   <p>Author:${book.author}</p>
   <p>Pages:${book.pages}</p>
   <p>Status:${book.read}</p>
+  <button class="toggle-btn" data-id="${book.id}">Toggle Read</button>
   <button class="remove-btn data-id="${book.id}">Remove</button>`;
 
     books.appendChild(card);
