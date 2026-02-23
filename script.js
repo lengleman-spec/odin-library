@@ -23,6 +23,7 @@ function addBookToLibrary(title, author, pages, read) {
 // Function to display library array to the cards
 function displayBooksOnPage() {
   const books = document.querySelector(".books");
-
+  // Clear previous books so they don't duplicate:
+  booksContainer.innerHTML = "";
   // Loop over library array to display cards
 }
