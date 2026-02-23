@@ -34,7 +34,8 @@ function displayBooksOnPage() {
     card.innerHTML = `<h3>${book.title}</h3>
   <p>Author:${book.author}</p>
   <p>Pages:${book.pages}</p>
-  <p>Status:${book.read}</p>`;
+  <p>Status:${book.read}</p>
+  <button class="remove-btn data-id="${book.id}">Remove</button>`;
 
     books.appendChild(card);
   });
