@@ -1,10 +1,9 @@
 let myLibrary = [];
-let idCounter = 0;
 
 // Constructor
 function Book(title, author, pages, read) {
-  // idCounter++ ensures no book is the same, even if they have the same name
-  this.id = idCounter++;
+  // Ensures no book has the same id - even if they share the same name
+  this.id = crypto.randomUUID();
   this.title = title;
   this.author = author;
   this.pages = pages;
