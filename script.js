@@ -73,7 +73,11 @@ document.querySelector(".books").addEventListener("click", function (event) {
     const id = event.target.filter(function (book) {
       return book.id !== id;
     });
-    displayBooksOnPage();
+
+    if (event.target.classList.contains("remove-btn")) {
+      myLibrary = myLibrary.filter((book) => book.id !== id);
+      displayBooksOnPage();
+    }
   }
 });
 
