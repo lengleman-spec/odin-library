@@ -26,4 +26,9 @@ function displayBooksOnPage() {
   // Clear previous books so they don't duplicate:
   booksContainer.innerHTML = "";
   // Loop over library array to display cards
+  myLibrary.forEach(function (book) {
+    // Creates a new empty card
+    const card = document.createElement("div");
+    card.classList.add("book-card");
+  });
 }
