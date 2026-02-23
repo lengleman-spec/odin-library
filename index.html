@@ -9,33 +9,29 @@
   <body>
     <div class="container">
       <div class="form-heading">
-        <h1>Add new book to library</h1>
+        <h1>My Library</h1>
       </div>
 
       <div class="books-heading">
         <h1>Books:</h1>
       </div>
 
-      <div class="form">
-        <h1>Test form info</h1>
-      </div>
-
       <div class="books"></div>
+
+      <button id="newBookBtn">New Book</button>
+      <form action="" id="bookForm" style="display: none">
+        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <input type="number" id="pages" placeholder="Pages" required />
+
+        <label for=""
+          >Read
+          <input type="checkbox" id="read" />
+        </label>
+
+        <button type="submit">Add Book</button>
+      </form>
     </div>
-
-    <button id="newBookBtn">New Book</button>
-    <form action="" id="bookForm" style="display: none">
-      <input type="text" id="title" placeholder="Title" required />
-      <input type="text" id="author" placeholder="Author" required />
-      <input type="number" id="pages" placeholder="Pages" required />
-
-      <label for=""
-        >Read
-        <input type="checkbox" id="read" />
-      </label>
-
-      <button type="submit">Add Book</button>
-    </form>
     <script src="script.js"></script>
   </body>
 </html>

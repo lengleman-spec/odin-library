@@ -1,0 +1,35 @@
+body {
+  background-color: lightsteelblue;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-card {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: whitesmoke;
+}
+
+.book-card button {
+  background-color: lightblue;
+  border-radius: 10px;
+  border: none;
+  padding: 8px 20px;
+}
+
+.book-card button:hover {
+  background-color: rgb(84, 84, 150);
+}
+
+#newBookBtn {
+  padding: 8px 20px;
+  border-radius: 10px;
+  background-color: lightblue;
+}
