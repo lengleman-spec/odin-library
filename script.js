@@ -31,4 +31,9 @@ function displayBooksOnPage() {
     const card = document.createElement("div");
     card.classList.add("book-card");
   });
+
+  card.innerHTML = <h3>${book.title}</h3>;
+  <p>Author:${book.author}</p>;
+  <p>Pages:${book.pages}</p>;
+  <p>Status:${book.read}</p>;
 }
