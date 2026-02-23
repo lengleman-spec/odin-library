@@ -66,6 +66,16 @@ bookForm.addEventListener("submit", function (event) {
   bookForm.style.display = none;
 });
 
+document.querySelector(".books").addEventListener("click", function (event) {
+  const id = event.target.dataset.id;
+  if (event.target.classList.contains("remove-btn")) {
+    const id = event.target.filter(function (book) {
+      return book.id !== id;
+    });
+    displayBooksOnPage();
+  }
+});
+
 addBookToLibrary("The Hobbit", "Tolkien", 295, "Not Read");
 addBookToLibrary("Dungeon Crawler Carl", "Somebody", 450, "Read");
 
