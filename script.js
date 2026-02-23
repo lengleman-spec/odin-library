@@ -1,7 +1,10 @@
 let myLibrary = [];
+let idCounter = 0;
 
 // Constructor
 function Book(title, author, pages, read) {
+  // idCounter++ ensures no book is the same, even if they have the same name
+  this.id = idCounter++;
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -16,4 +19,11 @@ function addBookToLibrary(Title, Author, Pages, Read) {
 
   // Pushing contents of book to myLibrary array
   myLibrary.push(book);
+}
+
+// Function to display library array to the cards
+function displayBooksOnPage() {
+  const books = document.querySelector(".books");
+
+  // Loop over library array to display cards
 }
