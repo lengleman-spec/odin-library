@@ -76,6 +76,14 @@ document.querySelector(".books").addEventListener("click", function (event) {
   }
 });
 
+Book.prototype.toggleRead = function () {
+  if (this.read === "Read") {
+    this.read = "Not Read";
+  } else {
+    this.read = "Read";
+  }
+};
+
 addBookToLibrary("The Hobbit", "Tolkien", 295, "Not Read");
 addBookToLibrary("Dungeon Crawler Carl", "Somebody", 450, "Read");
 
