@@ -40,6 +40,7 @@ function displayBooksOnPage() {
   });
 }
 
-addBookToLibrary("The Hobbit", "Tolkien", 295, "Read");
+addBookToLibrary("The Hobbit", "Tolkien", 295, "Not Read");
+addBookToLibrary("Dungeon Crawler Carl", "Somebody", 450, "Read");
 
 displayBooksOnPage();
