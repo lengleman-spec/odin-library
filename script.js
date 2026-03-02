@@ -2,15 +2,35 @@ let myLibrary = [];
 
 // Constructor
 function Book(title, author, pages, read) {
-  // Ensures no book has the same id - even if they share the same name
+  // Unique ID for each book
   this.id = crypto.randomUUID();
+
+  // Instance data
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
-  this.info = function () {
-    return title + author + ", " + pages + ", " + read;
-  };
+  this.read = read; // ideally a boolean
+}
+
+// Shared method (only ONE copy exists in memory)
+Book.prototype.info = function () {
+  return `${this.title} by ${this.author}, ${this.pages} pages, ${
+    this.read ? "already read" : "not read yet"
+  }`;
+};
+
+class Book {
+  constructor(title, author, pages, read) {
+    this._title = title;
+    this._author = author;
+    this._pages = pages;
+    this.read = read;
+  }
+  info() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${
+      this.read ? "already read" : "not read yet"
+    }`;
+  }
 }
 
 Book.prototype.toggleRead = function () {
