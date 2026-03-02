@@ -1,29 +1,10 @@
 let myLibrary = [];
 
-// Constructor
-function Book(title, author, pages, read) {
-  // Unique ID for each book
-  this.id = crypto.randomUUID();
-
-  // Instance data
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read; // ideally a boolean
-}
-
-// Shared method (only ONE copy exists in memory)
-Book.prototype.info = function () {
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${
-    this.read ? "already read" : "not read yet"
-  }`;
-};
-
 class Book {
   constructor(title, author, pages, read) {
-    this._title = title;
-    this._author = author;
-    this._pages = pages;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
     this.read = read;
   }
   info() {
@@ -31,15 +12,10 @@ class Book {
       this.read ? "already read" : "not read yet"
     }`;
   }
-}
-
-Book.prototype.toggleRead = function () {
-  if (this.read === "Read") {
-    this.read = "Not Read";
-  } else {
-    this.read = "Read";
+  toggleRead() {
+    this.read = !this.read;
   }
-};
+}
 
 function addBookToLibrary(title, author, pages, read) {
   let book = new Book(title, author, pages, read);
