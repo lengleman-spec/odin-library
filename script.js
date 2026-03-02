@@ -2,6 +2,7 @@ let myLibrary = [];
 
 class Book {
   constructor(title, author, pages, read) {
+    this.id = crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -60,7 +61,7 @@ bookForm.addEventListener("submit", function (event) {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
-  const read = document.getElementById("read").checked ? "Read" : "Not Read";
+  const read = document.getElementById("read").checked;
 
   addBookToLibrary(title, author, pages, read);
   displayBooksOnPage();
